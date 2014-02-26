@@ -6,14 +6,18 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-var handlebars = require('express3-handlebars')
+var handlebars = require('express3-handlebars');
 
 var index = require('./routes/index');
 var project = require('./routes/project');
+
 // Example route
 // var user = require('./routes/user');
 
+
+
 var app = express();
+app.get('/grid', index.viewGrid);
 
 // all environments
 app.set('port', process.env.PORT || 3000);
